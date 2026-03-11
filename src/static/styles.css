@@ -16,12 +16,65 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.admin-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+  font-size: 22px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1a237e;
+}
+
+.icon-button:hover {
+  background-color: #e8eaf6;
+}
+
+.admin-panel {
+  width: min(320px, calc(100vw - 30px));
+  background: #ffffff;
+  color: #111;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-panel .form-group {
+  margin-bottom: 10px;
+}
+
+.admin-panel button {
+  margin-top: 6px;
+}
+
+.admin-status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #37474f;
 }
 
 header h1 {
@@ -119,6 +172,12 @@ section h3 {
   padding: 2px 5px;
   transition: all 0.2s;
   border-radius: 3px;
+}
+
+.delete-btn:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .delete-btn:hover {
