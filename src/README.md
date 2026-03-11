@@ -5,7 +5,8 @@ A super simple FastAPI application that allows students to view and sign up for 
 ## Features
 
 - View all available extracurricular activities
-- Sign up for activities
+- Teacher-only sign up/unregister for activities
+- Teacher login/logout with credentials stored in `teachers.json`
 
 ## Getting Started
 
@@ -30,7 +31,19 @@ A super simple FastAPI application that allows students to view and sign up for 
 | Method | Endpoint                                                          | Description                                                         |
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Get all activities with their details and current participant count |
-| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up student for an activity (teacher token required)           |
+| DELETE | `/activities/{activity_name}/unregister?email=student@mergington.edu` | Unregister student from activity (teacher token required)      |
+| POST   | `/auth/login`                                                     | Teacher login (`username`, `password`)                              |
+| GET    | `/auth/status`                                                    | Validate current teacher token                                      |
+| POST   | `/auth/logout`                                                    | Logout teacher session                                              |
+
+## Admin Mode
+
+- The UI includes a teacher icon in the top-right corner.
+- Logged-out users can only view activities and participants.
+- Logged-in teachers can register or unregister students.
+
+Default demo credentials are defined in `teachers.json`.
 
 ## Data Model
 

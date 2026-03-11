@@ -8,6 +8,27 @@
   </head>
   <body>
     <header>
+      <div class="admin-controls">
+        <button id="admin-toggle" class="icon-button" aria-label="Teacher login">
+          <span aria-hidden="true">👤</span>
+        </button>
+        <div id="admin-panel" class="admin-panel hidden">
+          <button id="show-login" type="button">Teacher Login</button>
+          <form id="login-form" class="hidden">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" required />
+            </div>
+            <button type="submit">Sign In</button>
+          </form>
+          <button id="logout-btn" type="button" class="hidden">Logout</button>
+          <p id="admin-status" class="admin-status">Viewing mode (students)</p>
+        </div>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
